@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maytree Marriage Hall</title>
+  <meta name="description" content="A premium Indian marriage hall demo website showcasing wedding venue elegance, services, gallery, pricing, and inquiry flow for client presentation." />
+  <meta property="og:title" content="Maytree Marriage Hall" />
+  <meta property="og:description" content="Luxury Indian banquet and marriage hall demo website for client presentation." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.9rem);
+      --text-3xl: clamp(2.8rem, 1rem + 4vw, 5.5rem);
+      --text-hero: clamp(3.2rem, 0.8rem + 7vw, 7.8rem);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+
+      --color-bg: #fbf7f1;
+      --color-surface: #fffaf4;
+      --color-surface-2: #f6efe6;
+      --color-surface-offset: #efe3d5;
+      --color-surface-offset-2: #e4d4c3;
+      --color-surface-dynamic: #dbc5ad;
+      --color-divider: #dccab8;
+      --color-border: rgba(87, 54, 24, 0.16);
+      --color-text: #24160e;
+      --color-text-muted: #745a44;
+      --color-text-faint: #a48972;
+      --color-text-inverse: #fffaf4;
+      --color-primary: #7a1627;
+      --color-primary-hover: #5d0f1d;
+      --color-primary-active: #420914;
+      --color-primary-highlight: #f0d9d9;
+      --color-gold: #b8862c;
+      --color-gold-hover: #946917;
+      --color-gold-active: #6f4b0c;
+      --color-success: #356146;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.65rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-full: 9999px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-sm: 0 2px 10px rgba(43, 24, 10, 0.06);
+      --shadow-md: 0 12px 30px rgba(43, 24, 10, 0.1);
+      --shadow-lg: 0 24px 60px rgba(43, 24, 10, 0.16);
+      --content-narrow: 700px;
+      --content-default: 1100px;
+      --content-wide: 1280px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Manrope', Inter, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #17110f;
+      --color-surface: #201815;
+      --color-surface-2: #2a211d;
+      --color-surface-offset: #312620;
+      --color-surface-offset-2: #3c2e27;
+      --color-surface-dynamic: #533e30;
+      --color-divider: #45362d;
+      --color-border: rgba(255, 235, 214, 0.12);
+      --color-text: #f5eadf;
+      --color-text-muted: #d2bba8;
+      --color-text-faint: #9b846f;
+      --color-text-inverse: #180f0d;
+      --color-primary: #c9546c;
+      --color-primary-hover: #df7287;
+      --color-primary-active: #ef91a1;
+      --color-primary-highlight: #43232a;
+      --color-gold: #e0b25b;
+      --color-gold-hover: #edc677;
+      --color-gold-active: #f7d89a;
+      --color-success: #7db48f;
+      --shadow-sm: 0 2px 10px rgba(0,0,0,0.28);
+      --shadow-md: 0 14px 34px rgba(0,0,0,0.35);
+      --shadow-lg: 0 24px 64px rgba(0,0,0,0.45);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --color-bg: #17110f;
+        --color-surface: #201815;
+        --color-surface-2: #2a211d;
+        --color-surface-offset: #312620;
+        --color-surface-offset-2: #3c2e27;
+        --color-surface-dynamic: #533e30;
+        --color-divider: #45362d;
+        --color-border: rgba(255, 235, 214, 0.12);
+        --color-text: #f5eadf;
+        --color-text-muted: #d2bba8;
+        --color-text-faint: #9b846f;
+        --color-text-inverse: #180f0d;
+        --color-primary: #c9546c;
+        --color-primary-hover: #df7287;
+        --color-primary-active: #ef91a1;
+        --color-primary-highlight: #43232a;
+        --color-gold: #e0b25b;
+        --color-gold-hover: #edc677;
+        --color-gold-active: #f7d89a;
+        --color-success: #7db48f;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body {
+      min-height: 100dvh;
+      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top left, rgba(184, 134, 44, 0.08), transparent 28%),
+        radial-gradient(circle at right 10% top 20%, rgba(122, 22, 39, 0.08), transparent 22%),
+        var(--color-bg);
+    }
+    img, picture, svg { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; border: none; background: none; }
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.03; font-weight: 600; text-wrap: balance; }
+    p { color: var(--color-text-muted); max-width: 68ch; }
+    ul { list-style: none; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+    ::selection { background: rgba(122, 22, 39, 0.2); }
+
+    .skip-link {
+      position: absolute; left: -999px; top: var(--space-3); background: var(--color-primary);
+      color: var(--color-text-inverse); padding: var(--space-3) var(--space-4); border-radius: var(--radius-full); z-index: 1000;
+    }
+    .skip-link:focus { left: var(--space-4); }
+
+    .container { width: min(calc(100% - 2rem), var(--content-wide)); margin-inline: auto; }
+    .section { padding: clamp(var(--space-12), 8vw, var(--space-24)) 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--color-primary); font-weight: 800;
+    }
+    .eyebrow::before {
+      content: ''; width: 2.25rem; height: 1px; background: currentColor; opacity: 0.6;
+    }
+    .section-head { display: grid; gap: var(--space-4); margin-bottom: var(--space-10); }
+    .section-head h2 { font-size: var(--text-2xl); }
+
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--color-bg) 78%, transparent);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav {
+      min-height: 5rem; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    }
+    .brand { display: flex; align-items: center; gap: var(--space-3); }
+    .brand-mark {
+      width: 2.8rem; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-gold)); color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand-copy strong { display: block; font-size: 1.05rem; }
+    .brand-copy span { display: block; font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-faint); }
+    .nav-links {
+      display: flex; align-items: center; gap: clamp(var(--space-3), 2vw, var(--space-8));
+      font-size: var(--text-sm); color: var(--color-text-muted);
+    }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
+
+    .theme-toggle {
+      width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid var(--color-border);
+      display: grid; place-items: center; background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+      min-height: 2.9rem; padding: 0 var(--space-5); border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 700; transition: transform var(--transition-interactive), background var(--transition-interactive), color var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); box-shadow: var(--shadow-sm); }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary { border: 1px solid var(--color-border); background: var(--color-surface); }
+    .btn-secondary:hover { background: var(--color-surface-2); }
+
+    .hero {
+      padding: clamp(var(--space-12), 8vw, var(--space-24)) 0 var(--space-12);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(var(--space-8), 4vw, var(--space-16)); align-items: center;
+    }
+    .hero-copy { display: grid; gap: var(--space-6); }
+    .hero-copy h1 { font-size: var(--text-hero); max-width: 10ch; }
+    .hero-copy p { font-size: var(--text-lg); color: var(--color-text-muted); }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .hero-facts {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); padding-top: var(--space-4);
+    }
+    .fact {
+      padding: var(--space-4); background: color-mix(in srgb, var(--color-surface) 82%, transparent); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+    }
+    .fact strong { display: block; font-size: var(--text-lg); color: var(--color-text); }
+    .fact span { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-faint); }
+
+    .hero-visual {
+      position: relative; min-height: 40rem; border-radius: 2rem; overflow: hidden; background:
+      linear-gradient(180deg, rgba(24,15,13,0.05), rgba(24,15,13,0.28)),
+      url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--color-border);
+    }
+    .hero-card {
+      position: absolute; right: var(--space-6); bottom: var(--space-6); left: var(--space-6);
+      background: color-mix(in srgb, var(--color-surface) 82%, transparent); backdrop-filter: blur(10px);
+      border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-5);
+      display: grid; gap: var(--space-3);
+    }
+    .hero-card-top { display: flex; justify-content: space-between; gap: var(--space-4); align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: var(--space-2); padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-full); background: var(--color-primary-highlight); color: var(--color-primary); font-size: var(--text-xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    .showcase-grid,
+    .services-grid,
+    .stats-grid,
+    .testimonial-grid,
+    .pricing-grid,
+    .footer-grid {
+      display: grid; gap: var(--space-6);
+    }
+    .showcase-grid { grid-template-columns: 1.1fr 0.9fr; align-items: stretch; }
+    .showcase-main, .showcase-stack article, .service-card, .stat-card, .pricing-card, .testimonial, .contact-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+    }
+    .showcase-main {
+      overflow: hidden; min-height: 30rem; display: grid; align-content: end;
+      background:
+        linear-gradient(180deg, rgba(21,13,10,0.08), rgba(21,13,10,0.46)),
+        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80') center/cover;
+      padding: var(--space-8);
+      color: #fff8f2;
+    }
+    .showcase-main p { color: rgba(255,248,242,0.82); }
+    .showcase-stack { display: grid; gap: var(--space-6); }
+    .showcase-stack article { padding: var(--space-6); display: grid; gap: var(--space-3); }
+
+    .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .service-card { padding: var(--space-6); display: grid; gap: var(--space-4); }
+    .service-icon {
+      width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center;
+      background: color-mix(in srgb, var(--color-gold) 18%, var(--color-surface)); color: var(--color-primary);
+    }
+    .service-card h3 { font-size: 1.7rem; }
+
+    .stats-band {
+      padding: var(--space-8); background: linear-gradient(135deg, var(--color-primary), #9c2e45);
+      border-radius: 2rem; color: var(--color-text-inverse); box-shadow: var(--shadow-lg);
+    }
+    .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .stat-card { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); box-shadow: none; padding: var(--space-5); }
+    .stat-card strong { display: block; font-size: var(--text-2xl); color: #fff; }
+    .stat-card span { color: rgba(255,255,255,0.78); font-size: var(--text-sm); }
+
+    .experience {
+      display: grid; grid-template-columns: 0.95fr 1.05fr; gap: var(--space-8); align-items: center;
+    }
+    .experience-visual {
+      min-height: 35rem; border-radius: 2rem; overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-md);
+      background:
+        linear-gradient(180deg, rgba(22,10,8,0.05), rgba(22,10,8,0.24)),
+        url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80') center/cover;
+    }
+    .experience-copy { display: grid; gap: var(--space-5); }
+    .list { display: grid; gap: var(--space-4); }
+    .list li {
+      display: flex; gap: var(--space-3); align-items: flex-start; padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-divider);
+    }
+    .list li:last-child { border-bottom: none; }
+    .check {
+      width: 1.7rem; height: 1.7rem; flex: 0 0 auto; border-radius: 50%; display: grid; place-items: center;
+      background: var(--color-primary-highlight); color: var(--color-primary); margin-top: 0.15rem;
+    }
+
+    .testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .testimonial { padding: var(--space-6); display: grid; gap: var(--space-4); }
+    .testimonial footer { color: var(--color-text); font-weight: 700; }
+
+    .pricing-grid { grid-template-columns: 1.05fr 0.95fr 1fr; align-items: stretch; }
+    .pricing-card { padding: var(--space-6); display: grid; gap: var(--space-4); }
+    .pricing-card.featured {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--color-primary-highlight) 45%, var(--color-surface)), var(--color-surface));
+      transform: translateY(-0.45rem);
+    }
+    .price { font-size: var(--text-2xl); font-family: var(--font-display); color: var(--color-text); }
+    .price small { font-size: var(--text-sm); font-family: var(--font-body); color: var(--color-text-muted); }
+
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);
+      align-items: stretch;
+    }
+    .contact-card { padding: var(--space-6); }
+    form { display: grid; gap: var(--space-4); }
+    .field { display: grid; gap: var(--space-2); }
+    label { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); }
+    input, textarea, select {
+      width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: var(--color-surface-2);
+      min-height: 3.2rem; padding: 0 var(--space-4);
+    }
+    textarea { min-height: 9rem; padding-top: var(--space-4); resize: vertical; }
+    input::placeholder, textarea::placeholder { color: var(--color-text-faint); }
+    .contact-meta { display: grid; gap: var(--space-4); }
+    .contact-meta .meta-row {
+      display: flex; justify-content: space-between; gap: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-divider);
+    }
+
+    footer {
+      padding: var(--space-10) 0 var(--space-8); border-top: 1px solid var(--color-border);
+      background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+    }
+    .footer-grid { grid-template-columns: 1.3fr 0.7fr 0.9fr; align-items: start; }
+    .footer-note { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-4); }
+
+    .reveal {
+      opacity: 0; transform: translateY(20px); transition: opacity 700ms ease, transform 700ms ease;
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .showcase-grid, .experience, .contact-wrap, .footer-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .testimonial-grid, .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-visual, .experience-visual { min-height: 30rem; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; padding: var(--space-3) 0; }
+      .nav-links { order: 3; width: 100%; overflow-x: auto; padding-bottom: var(--space-2); }
+      .hero-copy h1 { max-width: 12ch; }
+      .hero-facts, .services-grid, .testimonial-grid, .stats-grid { grid-template-columns: 1fr; }
+      .hero-visual, .experience-visual, .showcase-main { min-height: 24rem; }
+      .hero-card { left: var(--space-4); right: var(--space-4); bottom: var(--space-4); }
+      .section { padding: var(--space-12) 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Maytree Marriage Hall">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M24 6L35 13V27C35 33.627 30.075 39.057 24 42C17.925 39.057 13 33.627 13 27V13L24 6Z" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M17 20C20.5 17.5 27.5 17.5 31 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="4.6" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong>Maytree Marriage Hall</strong>
+          
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#venue">Venue</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#pricing">Packages</a>
+        <a href="#contact">Enquiry</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a class="btn btn-primary" href="#contact">Book a Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Grand wedding venue</span>
+          <h1>Where Indian weddings feel royal from the first welcome.</h1>
+          <p>A premium demo website for a marriage hall brand, designed to impress clients with rich visuals, venue storytelling, package clarity, and a smooth booking journey.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Request Proposal</a>
+            <a class="btn btn-secondary" href="#venue">Explore the Venue</a>
+          </div>
+          <div class="hero-facts" aria-label="Venue highlights">
+            <div class="fact"><strong>1,200</strong><span>Guest capacity</span></div>
+            <div class="fact"><strong>3</strong><span>Event spaces</span></div>
+            <div class="fact"><strong>24/7</strong><span>Planning support</span></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-label="Luxury wedding decor at banquet hall">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <span class="pill">Client presentation ready</span>
+              <span style="font-size:var(--text-xs); color:var(--color-text-muted);">Delhi NCR style positioning</span>
+            </div>
+            <h2 style="font-size:var(--text-xl);">A modern Indian banquet identity with regal warmth.</h2>
+            <p>Showcase décor themes, catering strength, parking, bridal suite, and event coordination without overwhelming the visitor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="venue">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Venue story</span>
+          <h2>Built to look premium, trustworthy, and easy to sell.</h2>
+          <p>The layout follows a strong small-business hospitality structure: a clear hero, venue highlights, services, social proof, and one prominent enquiry action.</p>
+        </div>
+        <div class="showcase-grid">
+          <article class="showcase-main reveal">
+            <span class="pill" style="background:rgba(255,248,242,0.14); color:#fff8f2;">Signature ballroom</span>
+            <h3 style="font-size:var(--text-2xl); margin-top:var(--space-4);">Crystal-lit interiors for weddings, receptions, and engagement nights.</h3>
+            <p style="margin-top:var(--space-3);">Use this featured block to highlight the main hall with capacity, style, and decor flexibility.</p>
+          </article>
+          <div class="showcase-stack">
+            <article class="reveal">
+              <h3>Outdoor entry arrival</h3>
+              <p>Make the arrival experience feel cinematic with floral walkways, warm lighting, valet mention, and welcome signage.</p>
+            </article>
+            <article class="reveal">
+              <h3>Bridal suite and family lounge</h3>
+              <p>Add practical selling points that decision-makers care about: changing rooms, private waiting areas, and vendor support spaces.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Services</span>
+          <h2>Everything the family asks for, already answered.</h2>
+          <p>Instead of generic feature boxes, this page uses hospitality-focused service cards with elegant spacing and strong conversion intent.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Décor themes</h3>
+            <p>Royal red, pastel day wedding, floral mandap, reception glam, and fully custom stage styling.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Multi-cuisine catering</h3>
+            <p>North Indian, Mughlai, live counters, sweets, welcome drinks, and curated guest menu planning.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Guest comfort</h3>
+            <p>Ample parking, power backup, elevators, air conditioning, elderly-friendly access, and room tie-ups.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">✦</div>
+            <h3>Event management</h3>
+            <p>Dedicated coordinators for timings, vendor alignment, guest flow, baraat entry, and stage schedule.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stats-band reveal">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <strong>450+</strong>
+            <span>Celebrations hosted</span>
+          </div>
+          <div class="stat-card">
+            <strong>4.9/5</strong>
+            <span>Family satisfaction score</span>
+          </div>
+          <div class="stat-card">
+            <strong>90 min</strong>
+            <span>Average venue visit conversion window</span>
+          </div>
+          <div class="stat-card">
+            <strong>8 yrs</strong>
+            <span>Hospitality positioning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container experience">
+        <div class="experience-visual reveal" aria-label="Wedding celebration mood visual"></div>
+        <div class="experience-copy reveal">
+          <span class="eyebrow">Guest experience</span>
+          <h2>A complete marriage function journey, not just a hall booking.</h2>
+          <p>This section helps the client communicate value beyond square footage by focusing on moments, family comfort, and event execution.</p>
+          <ul class="list">
+            <li><span class="check">✓</span><div><strong>Grand entry planning</strong><p>Dhol, floral shower, LED pathway, and coordinated guest welcome experience.</p></div></li>
+            <li><span class="check">✓</span><div><strong>Stage-ready photography zones</strong><p>Dedicated photo corners and depth-rich lighting for reels, albums, and family portraits.</p></div></li>
+            <li><span class="check">✓</span><div><strong>Flexible event formats</strong><p>Ideal for sagan, haldi, mehndi, cocktail, reception, anniversary, and corporate celebrations.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h2>Social proof that feels believable and premium.</h2>
+          <p>Family-focused reviews help a hall website feel more trustworthy and easier to book.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial reveal">
+            <p>“The website instantly gave us confidence. The venue looked elegant, the packages were clear, and the enquiry section felt simple for our family.”</p>
+            <footer>Agarwal Family • Reception Booking</footer>
+          </article>
+          <article class="testimonial reveal">
+            <p>“The premium design makes the hall feel organized and upscale. It communicates exactly what a wedding client wants to know.”</p>
+            <footer>Event Planner • Delhi NCR</footer>
+          </article>
+          <article class="testimonial reveal">
+            <p>“Beautiful presentation, strong visuals, and no clutter. This is the kind of demo that can help close venue clients faster.”</p>
+            <footer>Venue Marketing Consultant</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Packages</span>
+          <h2>Simple pricing cards for fast discussion during a client meeting.</h2>
+          <p>These sample packages are placeholders, but the structure is useful for demos because clients can imagine their real offers inside it.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <span class="pill">Classic</span>
+            <h3>Elegant Day Function</h3>
+            <div class="price">₹2.5L <small>starting</small></div>
+            <p>Ideal for engagement, roka, anniversary, or intimate wedding events with essential décor and catering support.</p>
+            <a href="#contact" class="btn btn-secondary">Ask Details</a>
+          </article>
+          <article class="pricing-card featured reveal">
+            <span class="pill">Most preferred</span>
+            <h3>Royal Wedding Package</h3>
+            <div class="price">₹5.9L <small>starting</small></div>
+            <p>Main hall, stage styling, curated catering, hospitality desk, guest parking, and dedicated coordination support.</p>
+            <a href="#contact" class="btn btn-primary">Request Proposal</a>
+          </article>
+          <article class="pricing-card reveal">
+            <span class="pill">Grand</span>
+            <h3>Signature Celebration</h3>
+            <div class="price">Custom <small>quotation</small></div>
+            <p>Designed for high-capacity wedding events with multi-zone décor, premium entry, luxury dining, and branding.</p>
+            <a href="#contact" class="btn btn-secondary">Plan a Visit</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <article class="contact-card reveal">
+          <div class="section-head" style="margin-bottom:var(--space-6)">
+            <span class="eyebrow">Enquiry</span>
+            <h2>Turn this demo into the client’s own brand site.</h2>
+            <p>Use this form section for leads, WhatsApp integration, or callback requests. For a real client project, the details can be replaced with their actual hall information.</p>
+          </div>
+          <form>
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" type="text" placeholder="Enter full name" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" type="tel" placeholder="Enter phone number" />
+            </div>
+            <div class="field">
+              <label for="event">Event type</label>
+              <select id="event">
+                <option>Wedding</option>
+                <option>Reception</option>
+                <option>Engagement</option>
+                <option>Mehndi / Haldi</option>
+                <option>Corporate Event</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Requirements</label>
+              <textarea id="message" placeholder="Guest count, function date, décor style, and budget"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary">Send Enquiry</button>
+          </form>
+        </article>
+        <aside class="contact-card reveal">
+          <div class="section-head" style="margin-bottom:var(--space-6)">
+            <span class="eyebrow">Demo details</span>
+            <h2>Suggested client-ready content blocks.</h2>
+          </div>
+          <div class="contact-meta">
+            <div class="meta-row"><strong>Ideal market</strong><span>India wedding & banquet venues</span></div>
+            <div class="meta-row"><strong>Can add next</strong><span>Gallery, WhatsApp, map, video reel</span></div>
+            <div class="meta-row"><strong>Best for</strong><span>Venue owners, decorators, event planners</span></div>
+            <div class="meta-row"><strong>Location sample</strong><span>Delhi NCR / Ghaziabad / Muradnagar</span></div>
+          </div>
+          <div style="margin-top:var(--space-6); padding:var(--space-5); border-radius:var(--radius-lg); background:var(--color-surface-2); border:1px solid var(--color-border);">
+            <strong style="display:block; margin-bottom:var(--space-2);">Pitch line</strong>
+            <p style="margin:0;">“A luxury-looking venue website that helps families trust the hall before they even visit.”</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 6L35 13V27C35 33.627 30.075 39.057 24 42C17.925 39.057 13 33.627 13 27V13L24 6Z" stroke="currentColor" stroke-width="2.4"/>
+              <path d="M17 20C20.5 17.5 27.5 17.5 31 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="4.6" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="brand-copy"><strong>Maytree Marriage Hall</strong></span>
+        </div>
+        <p style="margin-top:var(--space-4);">Demo concept for Indian marriage hall and banquet clients, with premium styling, mobile-friendly layout, and conversion-focused storytelling.</p>
+        
+      </div>
+      <div>
+        <strong style="display:block; margin-bottom:var(--space-3);">Sections</strong>
+        <ul style="display:grid; gap:var(--space-2); color:var(--color-text-muted);">
+          <li><a href="#venue">Venue highlights</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Packages</a></li>
+          <li><a href="#contact">Enquiry</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong style="display:block; margin-bottom:var(--space-3);">Client add-ons</strong>
+        <ul style="display:grid; gap:var(--space-2); color:var(--color-text-muted);">
+          <li>Real image gallery</li>
+          <li>Google Maps embed</li>
+          <li>WhatsApp booking CTA</li>
+          <li>Custom domain deployment</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+
+      function paintIcon() {
+        toggle.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      paintIcon();
+      toggle.addEventListener('click', function () {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        paintIcon();
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('in-view');
+        });
+      }, { threshold: 0.14 });
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
